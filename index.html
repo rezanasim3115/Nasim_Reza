@@ -522,6 +522,25 @@ nav{
 .aml-meta{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--cyan);margin-bottom:6px}
 .aml-detail{font-size:0.82rem;color:var(--gray)}
 
+/* ─── CERT CATEGORY GROUPS ─── */
+.cert-category{margin-bottom:48px}
+.cert-category:last-child{margin-bottom:0}
+.cert-category-label{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:22px;
+}
+.cert-category-label::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,var(--border2),transparent);
+}
+.cert-category-count{
+  font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:0;
+  color:var(--gray-dark);font-size:0.72rem;text-transform:none;
+  padding:2px 8px;border-radius:10px;border:1px solid var(--border);
+}
+
 /* ─── EDUCATION ─── */
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .edu-card{
@@ -892,16 +911,23 @@ footer{
           <div class="timeline-item ipdc">
             <div class="timeline-dot"></div>
             <div class="timeline-date">Apr 2024 - Present</div>
-            <div class="timeline-role">DCAMLCO and Head of Credit Administration</div>
+            <div class="timeline-role">Head of Credit Administration</div>
             <div class="timeline-org">IPDC Finance PLC</div>
             <div class="timeline-dept">Operations · Credit Administration (CAD)</div>
           </div>
           <div class="timeline-item ipdc">
             <div class="timeline-dot"></div>
             <div class="timeline-date">Jul 2024 - Present</div>
-            <div class="timeline-role">DCAMLCO and Head of Credit Administration</div>
+            <div class="timeline-role">DCAMLCO</div>
             <div class="timeline-org">IPDC Finance PLC</div>
             <div class="timeline-dept">AML/CFT Compliance · Deputy Chief Anti-Money Laundering Compliance Officer</div>
+          </div>
+          <div class="timeline-item ipdc">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Aug 2019 - Present</div>
+            <div class="timeline-role">Member - Central Compliance Unit (CCU) - AML & CFT</div>
+            <div class="timeline-org">IPDC Finance PLC</div>
+            <div class="timeline-dept">AML/CFT Compliance</div>
           </div>
           <div class="timeline-item ipdc">
             <div class="timeline-dot"></div>
@@ -977,142 +1003,134 @@ footer{
     <div class="divider"></div>
     <div class="section-eyebrow fade-in">Credentials</div>
     <h2 class="section-title fade-in">Professional Certifications, Qualifications & Training</h2>
-    <p class="section-subtitle fade-in" style="margin-bottom:48px">A sustained commitment to professional development across global and regional certification bodies.</p>
-    <div class="certs-grid">
-      <div class="cert-card fade-in">
-        <div class="cert-year">2026</div>
-        <div class="cert-content">
-          <div class="cert-title">Certified Professional in Internal Audit & Bank Inspection (CPAI) - Appeared</div>
-          <div class="cert-inst">Bangladesh Institute of Bank Management (BIBM) · Session Jan–Aug 2026</div>
+    <p class="section-subtitle fade-in" style="margin-bottom:48px">A sustained commitment to professional development across global and regional certification bodies, organized by area of specialization.</p>
+
+    <div class="cert-category fade-in">
+      <div class="cert-category-label">AML/CFT & Compliance <span class="cert-category-count">9</span></div>
+      <div class="aml-grid">
+        <div class="aml-item">
+          <div class="aml-title">AML & CFT Training - Bangladesh Bank × IPDC</div>
+          <div class="aml-meta">May 16, 2026 · AMLD Department, Bangladesh Bank</div>
+          <div class="aml-detail">Most recent: joint training facilitated by AMLD and IPDC Finance PLC compliance unit.</div>
         </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.02s">
-        <div class="cert-year">2026</div>
-        <div class="cert-content">
-          <div class="cert-title">Anti-Money Laundering & Compliance for Professionals</div>
-          <div class="cert-inst">Academy of Business Professionals (ABP) · Award Date: Aug 24, 2026</div>
+        <div class="aml-item">
+          <div class="aml-title">Anti-Money Laundering & Compliance for Professionals</div>
+          <div class="aml-meta">Academy of Business Professionals (ABP) · Aug 24, 2026</div>
         </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.04s">
-        <div class="cert-year">2026</div>
-        <div class="cert-content">
-          <div class="cert-title">Comprehensive Power BI</div>
-          <div class="cert-inst">ICMA Bangladesh · 13 Jun–07 Jul 2026</div>
+        <div class="aml-item">
+          <div class="aml-title">Foundation in AML and KYC</div>
+          <div class="aml-meta">KYC Lookup (CPD Approved Provider #782462) · Feb 4, 2026</div>
         </div>
-      </div>
-      <div class="cert-card fade-in">
-        <div class="cert-year">2026</div>
-        <div class="cert-content">
-          <div class="cert-title">Certified Fraud and Forensic Professional (CFFP)</div>
-          <div class="cert-inst">Institute of Strategic Management and Finance (ISMF), USA · ID: 32261272 · Mar 2026</div>
+        <div class="aml-item">
+          <div class="aml-title">Prevention of Money Laundering and Terrorist Financing</div>
+          <div class="aml-meta">BIBM · Nov 16–20, 2025 · ID: BIBM/2025/TC-4233</div>
         </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.05s">
-        <div class="cert-year">2026</div>
-        <div class="cert-content">
-          <div class="cert-title">Advanced Training in Islamic Finance</div>
-          <div class="cert-inst">Islamic Centre for Training & Advisory (ICTA) · Feb–Mar 2026</div>
+        <div class="aml-item">
+          <div class="aml-title">Workshop on AML & CFT</div>
+          <div class="aml-meta">Bangladesh Leasing & Finance Companies Association (BLFCA) · Nov 14, 2024</div>
         </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.1s">
-        <div class="cert-year">2026</div>
-        <div class="cert-content">
-          <div class="cert-title">Foundation in AML and KYC</div>
-          <div class="cert-inst">KYC Lookup (CPD Approved Provider #782462) · Feb 4, 2026</div>
+        <div class="aml-item">
+          <div class="aml-title">44-Day Advanced AML and CFT Professional Track</div>
+          <div class="aml-meta">Completed Jan 10, 2024 · ID: S-2024011013683 · Sudoksho.com</div>
+          <div class="aml-detail">Extended advanced practitioner program covering comprehensive AML/CFT frameworks.</div>
         </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.15s">
-        <div class="cert-year">2026</div>
-        <div class="cert-content">
-          <div class="cert-title">Postgraduate Certificate in Forensic Accounting & Financial Fraud Detection</div>
-          <div class="cert-inst">HRDI, Daffodil International University · Dec 2025–Jan 2026</div>
+        <div class="aml-item">
+          <div class="aml-title">14-Day AML and CFT Certification</div>
+          <div class="aml-meta">Completed Dec 7, 2022 · ID: S-202212077569 · Sudoksho.com</div>
+          <div class="aml-detail">Intermediate track reinforcing compliance monitoring and STR/CTR reporting protocols.</div>
         </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.20s">
-        <div class="cert-year">2025</div>
-        <div class="cert-content">
-          <div class="cert-title">Financial Crime & Compliance Certification Program</div>
-          <div class="cert-inst">Standard Chartered Bank & BRAC Business School · Joint Corporate Program</div>
+        <div class="aml-item">
+          <div class="aml-title">7-Day AML and CFT Certification</div>
+          <div class="aml-meta">Completed Oct 29, 2020 · ID: S-202010294231 · Sudoksho.com</div>
+          <div class="aml-detail">Operational AML/CFT essentials focused on transactional monitoring and risk flags.</div>
         </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.25s">
-        <div class="cert-year">2025</div>
-        <div class="cert-content">
-          <div class="cert-title">Practice of Internal Auditing & Compliance Procedure</div>
-          <div class="cert-inst">Bijoy IT & Co. (Corporate Wiki) · Dec 2025 · Reg: IAC4-04</div>
-        </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.30s">
-        <div class="cert-year">2025</div>
-        <div class="cert-content">
-          <div class="cert-title">Prevention of Money Laundering and Terrorist Financing</div>
-          <div class="cert-inst">BIBM · Nov 16–20, 2025 · ID: BIBM/2025/TC-4233</div>
-        </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.35s">
-        <div class="cert-year">2024</div>
-        <div class="cert-content">
-          <div class="cert-title">AIBB Banking Professional Examination</div>
-          <div class="cert-inst">The Institute of Bankers, Bangladesh (IBB) · Professional Core Qualification</div>
-        </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.40s">
-        <div class="cert-year">2024</div>
-        <div class="cert-content">
-          <div class="cert-title">Workshop on AML & CFT</div>
-          <div class="cert-inst">Bangladesh Leasing & Finance Companies Association (BLFCA) · Nov 14, 2024</div>
-        </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.45s">
-        <div class="cert-year">2015</div>
-        <div class="cert-content">
-          <div class="cert-title">Credit Risk Management (CRM)</div>
-          <div class="cert-inst">IBA, University of Dhaka · May 15–16, 2015</div>
-        </div>
-      </div>
-      <div class="cert-card fade-in" style="transition-delay:0.50s">
-        <div class="cert-year">2011</div>
-        <div class="cert-content">
-          <div class="cert-title">Bank Foundation Course for City Bank PLC Officers</div>
-          <div class="cert-inst">Bangladesh Institute of Bank Management (BIBM)</div>
+        <div class="aml-item">
+          <div class="aml-title">9-Day AML and CFT Foundation Certification</div>
+          <div class="aml-meta">Completed Dec 1, 2019 · ID: S-201912012989 · Sudoksho.com</div>
+          <div class="aml-detail">Foundation certification marking the start of a systematic AML/CFT development journey.</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- AML SPECIALIZATION -->
-<section class="section" id="aml" style="padding-top:0">
-  <div class="container">
-    <div class="divider"></div>
-    <div class="section-eyebrow fade-in">Regulatory Specialization</div>
-    <h2 class="section-title fade-in">AML/CFT Continuous Certification Track</h2>
-    <p class="section-subtitle fade-in" style="margin-bottom:40px">Sustained professional validation across multiple AML/CFT frameworks - from foundation to advanced practitioner level.</p>
-    <div class="aml-grid fade-in">
-      <div class="aml-item">
-        <div class="aml-title">AML & CFT Training - Bangladesh Bank × IPDC</div>
-        <div class="aml-meta">May 16, 2026 · AMLD Department, Bangladesh Bank</div>
-        <div class="aml-detail">Most recent: joint training facilitated by AMLD and IPDC Finance PLC compliance unit.</div>
+    <div class="cert-category fade-in">
+      <div class="cert-category-label">Fraud, Forensic & Internal Audit <span class="cert-category-count">5</span></div>
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-year">2026</div>
+          <div class="cert-content">
+            <div class="cert-title">Certified Professional in Internal Audit & Bank Inspection (CPAI) - Appeared</div>
+            <div class="cert-inst">Bangladesh Institute of Bank Management (BIBM) · Session Jan–Aug 2026</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-year">2026</div>
+          <div class="cert-content">
+            <div class="cert-title">Certified Fraud and Forensic Professional (CFFP)</div>
+            <div class="cert-inst">Institute of Strategic Management and Finance (ISMF), USA · ID: 32261272 · Mar 2026</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-year">2026</div>
+          <div class="cert-content">
+            <div class="cert-title">Postgraduate Certificate in Forensic Accounting & Financial Fraud Detection</div>
+            <div class="cert-inst">HRDI, Daffodil International University · Dec 2025–Jan 2026</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-year">2025</div>
+          <div class="cert-content">
+            <div class="cert-title">Financial Crime & Compliance Certification Program</div>
+            <div class="cert-inst">Standard Chartered Bank & BRAC Business School · Joint Corporate Program</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-year">2025</div>
+          <div class="cert-content">
+            <div class="cert-title">Practice of Internal Auditing & Compliance Procedure</div>
+            <div class="cert-inst">Bijoy IT & Co. (Corporate Wiki) · Dec 2025 · Reg: IAC4-04</div>
+          </div>
+        </div>
       </div>
-      <div class="aml-item">
-        <div class="aml-title">44-Day Advanced AML and CFT Professional Track</div>
-        <div class="aml-meta">Completed Jan 10, 2024 · ID: S-2024011013683 · Sudoksho.com</div>
-        <div class="aml-detail">Extended advanced practitioner program covering comprehensive AML/CFT frameworks.</div>
-      </div>
-      <div class="aml-item">
-        <div class="aml-title">14-Day AML and CFT Certification</div>
-        <div class="aml-meta">Completed Dec 7, 2022 · ID: S-202212077569 · Sudoksho.com</div>
-        <div class="aml-detail">Intermediate track reinforcing compliance monitoring and STR/CTR reporting protocols.</div>
-      </div>
-      <div class="aml-item">
-        <div class="aml-title">7-Day AML and CFT Certification</div>
-        <div class="aml-meta">Completed Oct 29, 2020 · ID: S-202010294231 · Sudoksho.com</div>
-        <div class="aml-detail">Operational AML/CFT essentials focused on transactional monitoring and risk flags.</div>
-      </div>
-      <div class="aml-item">
-        <div class="aml-title">9-Day AML and CFT Foundation Certification</div>
-        <div class="aml-meta">Completed Dec 1, 2019 · ID: S-201912012989 · Sudoksho.com</div>
-        <div class="aml-detail">Foundation certification marking the start of a systematic AML/CFT development journey.</div>
+    </div>
+
+    <div class="cert-category fade-in">
+      <div class="cert-category-label">Banking & Professional Development <span class="cert-category-count">5</span></div>
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-year">2026</div>
+          <div class="cert-content">
+            <div class="cert-title">Comprehensive Power BI</div>
+            <div class="cert-inst">ICMA Bangladesh · 13 Jun–07 Jul 2026</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-year">2026</div>
+          <div class="cert-content">
+            <div class="cert-title">Advanced Training in Islamic Finance</div>
+            <div class="cert-inst">Islamic Centre for Training & Advisory (ICTA) · Feb–Mar 2026</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-year">2024</div>
+          <div class="cert-content">
+            <div class="cert-title">AIBB Banking Professional Examination</div>
+            <div class="cert-inst">The Institute of Bankers, Bangladesh (IBB) · Professional Core Qualification</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-year">2015</div>
+          <div class="cert-content">
+            <div class="cert-title">Credit Risk Management (CRM)</div>
+            <div class="cert-inst">IBA, University of Dhaka · May 15–16, 2015</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-year">2011</div>
+          <div class="cert-content">
+            <div class="cert-title">Bank Foundation Course for City Bank PLC Officers</div>
+            <div class="cert-inst">Bangladesh Institute of Bank Management (BIBM)</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
