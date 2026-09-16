@@ -132,7 +132,13 @@ nav{
   font-family:'Plus Jakarta Sans',sans-serif;
   font-size:clamp(2.6rem,4.5vw,3.8rem);
   font-weight:800;letter-spacing:-0.04em;line-height:1.1;
-  color:var(--white);margin-bottom:14px;
+  color:var(--white);margin-bottom:10px;
+}
+
+.hero-credentials{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.8rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px;
 }
 
 .hero-tagline{
@@ -354,9 +360,14 @@ nav{
 }
 .expertise-card:hover::before{opacity:1}
 .expertise-icon{
-  font-size:1.6rem;margin-bottom:16px;
-  display:inline-block;
+  width:52px;height:52px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:18px;
+  background:rgba(56,189,248,0.08);
+  border:1px solid var(--border2);
+  color:var(--cyan);
 }
+.expertise-icon svg{width:26px;height:26px;display:block}
 .expertise-title{
   font-family:'Plus Jakarta Sans',sans-serif;
   font-size:1.02rem;font-weight:700;
@@ -478,75 +489,48 @@ nav{
 .timeline-item.city .timeline-org{color:var(--ice)}
 .timeline-dept{font-size:0.82rem;color:var(--gray)}
 
-/* ─── INITIATIVES TIMELINE ─── */
-.initiatives-timeline{position:relative;padding-left:32px}
-.initiatives-timeline::before{
-  content:'';position:absolute;
-  left:0;top:8px;bottom:8px;width:1px;
-  background:linear-gradient(180deg,var(--gold),var(--cyan) 45%,var(--ice) 75%,transparent);
+/* ─── INITIATIVES GRID ─── */
+.initiatives-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;
 }
-.initiative-item{
-  position:relative;margin-bottom:22px;
-  padding:26px 28px;border-radius:12px;
+.initiative-card{
+  padding:24px 24px;border-radius:10px;
   background:var(--surface);border:1px solid var(--border);
-  transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s,background 0.25s;
+  transition:border-color 0.25s,background 0.25s,transform 0.25s,box-shadow 0.25s;
 }
-.initiative-item:last-child{margin-bottom:0}
-.initiative-item:hover{border-color:var(--border2);background:var(--surface2)}
-.initiative-dot{
-  position:absolute;left:-36px;top:30px;
-  width:10px;height:10px;border-radius:50%;
-  border:2px solid var(--cyan);background:var(--bg);
-  box-shadow:0 0 10px var(--glow-cyan);
-}
+.initiative-card:hover{border-color:var(--border2);background:var(--surface2);transform:translateY(-3px)}
+.initiative-badges{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 .initiative-year{
-  font-family:'Plus Jakarta Sans',sans-serif;
-  font-weight:800;font-size:1.15rem;letter-spacing:-0.02em;
-  color:var(--cyan);margin-bottom:10px;
-  display:flex;align-items:center;gap:10px;
+  flex-shrink:0;
+  font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:600;
+  color:var(--cyan);padding:4px 10px;border-radius:6px;
+  border:1px solid rgba(56,189,248,0.25);background:rgba(56,189,248,0.07);
+  line-height:1;white-space:nowrap;
 }
-.initiative-text{font-size:0.88rem;color:var(--gray);line-height:1.75}
+.initiative-tag{
+  font-family:'JetBrains Mono',monospace;font-size:0.6rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;
+  padding:4px 9px;border-radius:20px;line-height:1;white-space:nowrap;
+}
+.initiative-tag.recent{color:var(--gold);background:var(--gold-soft);border:1px solid rgba(201,168,76,0.3)}
+.initiative-tag.breakthrough{color:var(--ice);background:rgba(0,210,196,0.1);border:1px solid rgba(0,210,196,0.3)}
+.initiative-desc{font-size:0.86rem;color:var(--gray);line-height:1.75}
 
-/* Featured (most recent) initiative years */
-.initiative-item.featured{
-  padding:34px 36px;border-radius:14px;
-  background:var(--glass-bg);backdrop-filter:blur(12px);
-  border:1px solid var(--glass-border);
+/* Recent years - gold emphasis */
+.initiative-card.is-recent{
+  border-color:rgba(201,168,76,0.3);
   border-left:3px solid var(--gold);
-  box-shadow:0 12px 40px rgba(56,189,248,0.08);
+  background:linear-gradient(135deg,rgba(201,168,76,0.06),var(--surface) 65%);
+  box-shadow:0 10px 32px rgba(201,168,76,0.07);
 }
-.initiative-item.featured .initiative-dot{
-  width:13px;height:13px;left:-38px;top:36px;
-  border-color:var(--gold);box-shadow:0 0 12px rgba(201,168,76,0.35);
+.initiative-card.is-recent .initiative-year{
+  color:var(--gold);border-color:rgba(201,168,76,0.3);background:var(--gold-soft);
 }
-.initiative-item.featured .initiative-year{
-  font-size:1.5rem;
-  background:linear-gradient(135deg,var(--gold),#e8c96a);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.initiative-item.featured .initiative-text{font-size:0.92rem;color:var(--white);opacity:0.85}
-.initiative-badge{
-  display:inline-flex;align-items:center;
-  padding:3px 10px;border-radius:20px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.62rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
-  background:var(--gold-soft);color:var(--gold);
-  border:1px solid rgba(201,168,76,0.25);
-}
+.initiative-card.is-recent:hover{background:linear-gradient(135deg,rgba(201,168,76,0.1),var(--surface2) 65%)}
 
-/* Compact (older) initiative years */
-.initiative-item.compact{
-  padding:18px 22px;
-}
-.initiative-item.compact .initiative-dot{
-  width:8px;height:8px;left:-34px;top:23px;
-  border-width:2px;
-}
-.initiative-item.compact .initiative-year{
-  font-size:0.95rem;margin-bottom:6px;color:var(--gray-dark);
-  background:none;-webkit-text-fill-color:var(--gray-dark);
-}
-.initiative-item.compact .initiative-text{font-size:0.82rem;line-height:1.65}
+/* Breakthrough years - ice/teal emphasis (independent of recency) */
+.initiative-card.is-breakthrough{border-left:3px solid var(--ice)}
+.initiative-card.is-recent.is-breakthrough{border-left:3px solid var(--gold)}
 
 /* ─── CERTIFICATIONS ─── */
 .certs-grid{
@@ -730,11 +714,6 @@ footer{
   .stats-grid{grid-template-columns:1fr 1fr}
   .metric-cards{flex-direction:column;align-items:stretch}
   .nav-links{display:none}
-  .initiatives-timeline{padding-left:26px}
-  .initiative-item{padding:18px 16px}
-  .initiative-item.featured{padding:24px 20px}
-  .initiative-dot{left:-30px}
-  .initiative-item.featured .initiative-dot{left:-32px}
 }
 </style>
 </head>
@@ -765,6 +744,7 @@ footer{
       <div class="hero-left fade-in">
         <div class="hero-eyebrow"><span></span> Banking Professional · Bangladesh</div>
         <h1 class="hero-name">Nasim Reza</h1>
+        <div class="hero-credentials">MBA · AIBB · CFFP</div>
         <p class="hero-tagline">17+ Years of Experience in Credit Administration, AML/CFT Compliance & Risk Management</p>
         <p class="hero-desc">
           DCAMLCO &amp; Head of Credit Administration at IPDC Finance PLC - leading AML/CFT governance, fraud investigation, credit risk management, and operational transformation across Bangladesh's financial sector.
@@ -886,32 +866,32 @@ footer{
     <p class="section-subtitle fade-in" style="margin-bottom:48px">Cross-functional leadership across Bangladesh Bank's most critical compliance and credit domains.</p>
     <div class="expertise-grid">
       <div class="expertise-card fade-in">
-        <div class="expertise-icon">🏛️</div>
+        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M4 10v9M8 10v9M12 10v9M16 10v9M20 10v9"/><path d="M2 21h20"/></svg></div>
         <div class="expertise-title">Credit Administration</div>
         <div class="expertise-desc">Strengthened documentation, controls, and credit administration processes through robust SOPs and policies. Ensured accurate loan and deposit documentation across retail, SME, and corporate portfolios.</div>
       </div>
       <div class="expertise-card fade-in" style="transition-delay:0.06s">
-        <div class="expertise-icon">⚖️</div>
+        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M3 7h4l2-1.5L11 7"/><path d="M17 7h4l-2-1.5L13 7"/><path d="M3 7l-2 5a3 3 0 006 0z"/><path d="M21 7l-2 5a3 3 0 006 0z"/></svg></div>
         <div class="expertise-title">AML/CFT Compliance (DCAMLCO)</div>
         <div class="expertise-desc">Led AML/CFT governance including KYC, transaction monitoring, and STR/CTR reporting, coordinating with BFIU and Bangladesh Bank on timely regulatory reporting and submissions.</div>
       </div>
       <div class="expertise-card fade-in" style="transition-delay:0.12s">
-        <div class="expertise-icon">🔍</div>
+        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div>
         <div class="expertise-title">Fraud Detection & Management</div>
         <div class="expertise-desc">Monitored suspicious transactions using AML systems. Investigated credit fraud and financial irregularities, implementing preventive measures and coordinating directly with regulators.</div>
       </div>
       <div class="expertise-card fade-in" style="transition-delay:0.18s">
-        <div class="expertise-icon">📋</div>
+        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6a1 1 0 011 1v1H8V5a1 1 0 011-1z"/><path d="M9 13l2 2 4-4"/></svg></div>
         <div class="expertise-title">Audit & Regulatory Liaison</div>
         <div class="expertise-desc">Coordinated Bangladesh Bank, BFIU, and internal/external audits. Managed regulatory queries, inspections, and reviews, and delivered timely, accurate regulatory reporting on behalf of the institution.</div>
       </div>
       <div class="expertise-card fade-in" style="transition-delay:0.24s">
-        <div class="expertise-icon">🛡️</div>
+        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <div class="expertise-title">Operational Risk & Internal Control</div>
         <div class="expertise-desc">Designed controls to reduce operational and compliance risks across loan, deposit, and operations. Identified gaps and implemented corrective actions with a risk-based methodology.</div>
       </div>
       <div class="expertise-card fade-in" style="transition-delay:0.30s">
-        <div class="expertise-icon">⚡</div>
+        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
         <div class="expertise-title">Process Optimization & Automation</div>
         <div class="expertise-desc">Streamlined workflows and introduced automation across CAD operations - from automated memo numbering and digital dispatch registers to CCU automation and e-approval modules.</div>
       </div>
@@ -924,7 +904,7 @@ footer{
   <div class="container">
     <div class="divider"></div>
     <div class="section-eyebrow fade-in">Published Work</div>
-    <h2 class="section-title fade-in">Authorship & Intellectual Contribution</h2>
+    <h2 class="section-title fade-in">Beyond the Balance Sheet</h2>
     <div class="book-card fade-in" style="margin-top:40px">
       <div class="book-cover" style="padding:0;overflow:hidden;background:none;border:1px solid rgba(201,168,76,0.35);width:220px;height:315px;flex-shrink:0;">
         <div class="book-cover-spine"></div>
@@ -986,17 +966,17 @@ footer{
         <div class="timeline">
           <div class="timeline-item ipdc">
             <div class="timeline-dot"></div>
-            <div class="timeline-date">Apr 2024 - Present</div>
-            <div class="timeline-role">Head of Credit Administration</div>
-            <div class="timeline-org">IPDC Finance PLC</div>
-            <div class="timeline-dept">Operations · Credit Administration (CAD)</div>
-          </div>
-          <div class="timeline-item ipdc">
-            <div class="timeline-dot"></div>
             <div class="timeline-date">Jul 2024 - Present</div>
             <div class="timeline-role">DCAMLCO</div>
             <div class="timeline-org">IPDC Finance PLC</div>
             <div class="timeline-dept">AML/CFT Compliance · Deputy Chief Anti-Money Laundering Compliance Officer</div>
+          </div>
+          <div class="timeline-item ipdc">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Apr 2024 - Present</div>
+            <div class="timeline-role">Head of Credit Administration</div>
+            <div class="timeline-org">IPDC Finance PLC</div>
+            <div class="timeline-dept">Operations · Credit Administration (CAD)</div>
           </div>
           <div class="timeline-item ipdc">
             <div class="timeline-dot"></div>
@@ -1081,56 +1061,71 @@ footer{
     <h2 class="section-title fade-in">INITIATIVES (2023 - 2026)</h2>
     <p class="section-subtitle fade-in" style="margin-bottom:48px">A year-by-year record of automation, digitization, and process-governance initiatives led across Credit Administration and AML/CFT compliance.</p>
 
-    <div class="initiatives-timeline fade-in">
-      <div class="initiative-item featured">
-        <div class="initiative-dot"></div>
-        <div class="initiative-year">2026 <span class="initiative-badge">Most Recent</span></div>
-        <div class="initiative-text">Service Request Platform enhancements and Auto E-Ticket Assignment. 2nd Phase of Custody Management (Documentation Archive). Spearheaded advanced AML/CFT automation initiatives, including Dynamic Customer Dedupe Check, Adverse Media &amp; Domestic PEP/IP Monitoring, CCU Search Dashboard, CCU Automation Phase II (STR/SAR/CTR workflow automation from BAMLCO to CAMLCO to BFIU via goAML, automated regulator response letters).</div>
+    <div class="initiatives-grid fade-in">
+      <div class="initiative-card is-recent is-breakthrough">
+        <div class="initiative-badges">
+          <span class="initiative-year">2026</span>
+          <span class="initiative-tag recent">Recent</span>
+          <span class="initiative-tag breakthrough">Breakthrough</span>
+        </div>
+        <div class="initiative-desc">Service Request Platform enhancements and Auto E-Ticket Assignment. 2nd Phase of Custody Management (Documentation Archive). Spearheaded advanced AML/CFT automation initiatives, including Dynamic Customer Dedupe Check, Adverse Media &amp; Domestic PEP/IP Monitoring, CCU Search Dashboard, CCU Automation Phase II (STR/SAR/CTR workflow automation from BAMLCO to CAMLCO to BFIU via goAML, automated regulator response letters).</div>
       </div>
-      <div class="initiative-item featured">
-        <div class="initiative-dot"></div>
-        <div class="initiative-year">2025</div>
-        <div class="initiative-text">Led the enterprise-wide implementation of SOP/Process Note Version 2 for Retail, SME, Corporate, SCF, and Factoring; strengthened Documentation, Disbursement, Debtor Management, and AML governance; delivered CCU Automation Phase I (Regulatory Letter &amp; Query Tracking), E-Approval (Cash Deposit), and the Digital Dispatch Register.</div>
+      <div class="initiative-card is-recent">
+        <div class="initiative-badges">
+          <span class="initiative-year">2025</span>
+          <span class="initiative-tag recent">Recent</span>
+        </div>
+        <div class="initiative-desc">Led the enterprise-wide implementation of SOP/Process Note Version 2 for Retail, SME, Corporate, SCF, and Factoring; strengthened Documentation, Disbursement, Debtor Management, and AML governance; delivered CCU Automation Phase I (Regulatory Letter &amp; Query Tracking), E-Approval (Cash Deposit), and the Digital Dispatch Register.</div>
       </div>
-      <div class="initiative-item">
-        <div class="initiative-dot"></div>
-        <div class="initiative-year">2024</div>
-        <div class="initiative-text">Led the automation and digital transformation of Credit Administration operations, including Vehicle Registration, Auto Memo Numbering, Daily Cheque Management, Business Finance Documentation, Shiri Disbursement, Pre-Audit Tracking, Charge Documentation, and Loan &amp; Lease Sanction Advice.</div>
+      <div class="initiative-card">
+        <div class="initiative-badges">
+          <span class="initiative-year">2024</span>
+        </div>
+        <div class="initiative-desc">Led the automation and digital transformation of Credit Administration operations, including Vehicle Registration, Auto Memo Numbering, Daily Cheque Management, Business Finance Documentation, Shiri Disbursement, Pre-Audit Tracking, Charge Documentation, and Loan &amp; Lease Sanction Advice.</div>
       </div>
-      <div class="initiative-item">
-        <div class="initiative-dot"></div>
-        <div class="initiative-year">2023</div>
-        <div class="initiative-text">Developed comprehensive Operations &amp; Credit Administration Process Notes and standardized workflows for Refund Management, Deposit Account Lien, Inflow Transaction Management, Ops E-Ticket, Vehicle Ownership Transfer, and Deceased Customer Loan &amp; Deposit Management.</div>
+      <div class="initiative-card">
+        <div class="initiative-badges">
+          <span class="initiative-year">2023</span>
+        </div>
+        <div class="initiative-desc">Developed comprehensive Operations &amp; Credit Administration Process Notes and standardized workflows for Refund Management, Deposit Account Lien, Inflow Transaction Management, Ops E-Ticket, Vehicle Ownership Transfer, and Deceased Customer Loan &amp; Deposit Management.</div>
       </div>
-      <div class="initiative-item compact">
-        <div class="initiative-dot"></div>
-        <div class="initiative-year">2022</div>
-        <div class="initiative-text">Implemented the institution-wide Documentation SOP, strengthening documentation quality, regulatory compliance, and operational controls.</div>
+      <div class="initiative-card">
+        <div class="initiative-badges">
+          <span class="initiative-year">2022</span>
+        </div>
+        <div class="initiative-desc">Implemented the institution-wide Documentation SOP, strengthening documentation quality, regulatory compliance, and operational controls.</div>
       </div>
-      <div class="initiative-item compact">
-        <div class="initiative-dot"></div>
-        <div class="initiative-year">2021</div>
-        <div class="initiative-text">Developed a centralized Task Management System to improve workflow efficiency and introduced standardized Charge Documents for business loans and leases.</div>
+      <div class="initiative-card">
+        <div class="initiative-badges">
+          <span class="initiative-year">2021</span>
+        </div>
+        <div class="initiative-desc">Developed a centralized Task Management System to improve workflow efficiency and introduced standardized Charge Documents for business loans and leases.</div>
       </div>
-      <div class="initiative-item compact">
-        <div class="initiative-dot"></div>
-        <div class="initiative-year">2020</div>
-        <div class="initiative-text">Designed and implemented a centralized Custody &amp; Vault Management System with a secure database, enhancing document security and custody controls.</div>
+      <div class="initiative-card is-breakthrough">
+        <div class="initiative-badges">
+          <span class="initiative-year">2020</span>
+          <span class="initiative-tag breakthrough">Breakthrough</span>
+        </div>
+        <div class="initiative-desc">Designed and implemented a centralized Custody &amp; Vault Management System with a secure database, enhancing document security and custody controls.</div>
       </div>
-      <div class="initiative-item compact">
-        <div class="initiative-dot"></div>
-        <div class="initiative-year">2019</div>
-        <div class="initiative-text">Revised the Service Level Agreement (SLA) between Branch Banking and Credit Administration and modernized the CAD Process Manual.</div>
+      <div class="initiative-card">
+        <div class="initiative-badges">
+          <span class="initiative-year">2019</span>
+        </div>
+        <div class="initiative-desc">Revised the Service Level Agreement (SLA) between Branch Banking and Credit Administration and modernized the CAD Process Manual.</div>
       </div>
-      <div class="initiative-item compact">
-        <div class="initiative-dot"></div>
-        <div class="initiative-year">2018</div>
-        <div class="initiative-text">Implemented eDoc Version 2, strengthened Drawing Power Calculation and Disbursement Authority controls, and led the CBL Security Management Project to ensure Bangladesh Bank CIB compliance.</div>
+      <div class="initiative-card">
+        <div class="initiative-badges">
+          <span class="initiative-year">2018</span>
+        </div>
+        <div class="initiative-desc">Implemented eDoc Version 2, strengthened Drawing Power Calculation and Disbursement Authority controls, and led the CBL Security Management Project to ensure Bangladesh Bank CIB compliance.</div>
       </div>
-      <div class="initiative-item compact">
-        <div class="initiative-dot"></div>
-        <div class="initiative-year">2017</div>
-        <div class="initiative-text">Successfully migrated eDoc Version 1 to Version 2, implemented CSMS, finalized ISO-aligned SOPs, and updated the Service Level Agreement (SLA) between Branch Banking and Credit Administration.</div>
+      <div class="initiative-card is-breakthrough">
+        <div class="initiative-badges">
+          <span class="initiative-year">2017</span>
+          <span class="initiative-tag breakthrough">Breakthrough</span>
+        </div>
+        <div class="initiative-desc">Successfully migrated eDoc Version 1 to Version 2, implemented CSMS, finalized ISO-aligned SOPs, and updated the Service Level Agreement (SLA) between Branch Banking and Credit Administration.</div>
       </div>
     </div>
   </div>
